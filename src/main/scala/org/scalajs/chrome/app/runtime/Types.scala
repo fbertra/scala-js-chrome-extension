@@ -2,7 +2,7 @@ package org.scalajs.chrome.app.runtime
 
 import scala.scalajs.js
 
-class LaunchData extends js.Object {
+trait LaunchData extends js.Object {
   var id : String = _
   // to-do: items 
   var url : String = _

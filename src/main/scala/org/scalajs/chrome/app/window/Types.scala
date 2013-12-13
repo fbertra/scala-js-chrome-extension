@@ -6,28 +6,25 @@ import org.scalajs.chrome.Event
 
 
 
-/*
-// to-do: completar
-class CreateParams (
-  id : js.String,
-  minWidth : js.Number,  // Minimum width of the window.
-  minHeight : js.Number,  // Minimum height of the window.
-  maxWidth : js.Number,   // Maximum width of the window.
-  maxHeight : js.Number,  // Maximum height of the window.
-  frame : js.String, // Frame type: none or chrome (defaults to chrome). For none, the -webkit-app-region CSS property can be used to apply draggability to the app's window. -webkit-app-region: drag can be used to mark regions draggable. no-drag can be used to disable this style on nested elements.
-  bounds : Bounds, // Size and position of the content in the window (excluding the titlebar). If an id is also specified and a window with a matching id has been shown before, the remembered bounds of the window will be used instead.
-  transparentBackground : js.Boolean, // Enable window background transparency. Only supported in ash. Requires experimental API permission.
-  state : js.String, // enum of "normal", "fullscreen", "maximized", or "minimized" : The initial state of the window, allowing it to be created already fullscreen, maximized, or minimized. Defaults to 'normal'.
-  hidden : js.Boolean, // If true, the window will be created in a hidden state. Call show() on the window to show it once it has been created. Defaults to false.
-  resizable: js.Boolean,  // If true, the window will be resizable by the user. Defaults to true.
-  alwaysOnTop : js.Boolean // If true, the window will stay above most other windows. If there are multiple windows of this kind, the currently focused window will be in the foreground. Defaults to false. Call setAlwaysOnTop() on the window to change this property after creation. Currently only available on Dev channel.)
-)
-*/
+trait CreateParams extends js.Object {
+  var id : js.String = ???
+  var minWidth : js.Number = ???  // Minimum width of the window.
+  var minHeight : js.Number = ???  // Minimum height of the window.
+  var maxWidth : js.Number = ???   // Maximum width of the window.
+  var maxHeight : js.Number = ???  // Maximum height of the window.
+  var frame : js.String = ??? // Frame type: none or chrome (defaults to chrome). For none, the -webkit-app-region CSS property can be used to apply draggability to the app's window. -webkit-app-region: drag can be used to mark regions draggable. no-drag can be used to disable this style on nested elements.
+  // to-do
+  var bounds : Bounds = ??? // Size and position of the content in the window (excluding the titlebar). If an id is also specified and a window with a matching id has been shown before, the remembered bounds of the window will be used instead.
+  var transparentBackground : js.Boolean = ??? // Enable window background transparency. Only supported in ash. Requires experimental API permission.
+  var state : js.String = ??? // enum of "normal", "fullscreen", "maximized", or "minimized" : The initial state of the window, allowing it to be created already fullscreen, maximized, or minimized. Defaults to 'normal'.
+  var hidden : js.Boolean = ??? // If true, the window will be created in a hidden state. Call show() on the window to show it once it has been created. Defaults to false.
+  var resizable: js.Boolean = ???  // If true, the window will be resizable by the user. Defaults to true.
+  var alwaysOnTop : js.Boolean  = ???// If true, the window will stay above most other windows. If there are multiple windows of this kind, the currently focused window will be in the foreground. Defaults to false. Call setAlwaysOnTop() on the window to change this property after creation. Currently only available on Dev channel.)
+}
 
-class CreateParams (id : js.String) 
 
 // to-do: ver si se debe usar tipo Int en lugar de js.Number
-class Bounds extends js.Object {
+trait Bounds extends js.Object {
   var left : js.Number = _
   var top : js.Number = _
   var width : js.Number = _
@@ -35,7 +32,7 @@ class Bounds extends js.Object {
 }
 
 //
-class AppWindow extends js.Object {
+trait AppWindow extends js.Object {
   // events
   def onBoundsChanged : Event = ???
   def onClosed : Event = ??? 
